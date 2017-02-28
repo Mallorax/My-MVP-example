@@ -15,8 +15,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     public static class MyHolder extends RecyclerView.ViewHolder{
 
-        public TextView textView;
-        public ImageView imageView;
+        private TextView textView;
+        private ImageView imageView;
 
         public MyHolder(View view){
             super(view);
@@ -39,7 +39,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
-
+        PlaceHolder place = list.get(position);
+        holder.textView.setText(place.getName());
+        holder.imageView.setImageResource(place.getImageResource());
     }
 
     @Override
