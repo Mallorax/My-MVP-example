@@ -45,7 +45,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         holder.imageView.setImageResource(place.getImageResource());
     }
 
-//    metoda przeze mnie zmieniona według IDE nie jest implementacją metody z superklasy
+//    metoda przeze mnie zmieniona -> według IDE nie jest implementacją metody z superklasy
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
         PlaceHolder place = list.get(position);
