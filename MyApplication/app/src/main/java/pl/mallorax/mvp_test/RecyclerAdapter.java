@@ -37,6 +37,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         return new MyHolder(itemView);
     }
 
+    //metoda zaimplementowana za pomocą IDE -> nie mogę się odnieść do konkretnych pól
+    @Override
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        PlaceHolder place = list.get(position);
+        holder.textView.setText(place.getName());
+        holder.imageView.setImageResource(place.getImageResource());
+    }
+
+    //metoda przeze mnie zmieniona według IDE nie jest implementacją metody z superklasy
     @Override
     public void onBindViewHolder(MyHolder holder, int position) {
         PlaceHolder place = list.get(position);
@@ -48,4 +57,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return list.size();
     }
+
+
 }
