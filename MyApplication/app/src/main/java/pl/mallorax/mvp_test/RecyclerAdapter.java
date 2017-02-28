@@ -30,28 +30,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         this.list = list;
     }
 
+
     @Override
-    public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item, parent, false);
         return new MyHolder(itemView);
     }
 
-//    metoda zaimplementowana za pomocą IDE -> nie mogę się odnieść do konkretnych pól
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         PlaceHolder place = list.get(position);
-        holder.textView.setText(place.getName());
-        holder.imageView.setImageResource(place.getImageResource());
+        ((MyHolder) holder).textView.setText(place.getName());
+        ((MyHolder) holder).imageView.setImageResource(place.getImageResource());
     }
 
-//    metoda przeze mnie zmieniona -> według IDE nie jest implementacją metody z superklasy
-    @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
-        PlaceHolder place = list.get(position);
-        holder.textView.setText(place.getName());
-        holder.imageView.setImageResource(place.getImageResource());
-    }
 
     @Override
     public int getItemCount() {
